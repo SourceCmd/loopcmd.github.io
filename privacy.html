@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Loop Cmd</title>
+  <meta name="description" content="How Loop Cmd handles your information.">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B2030" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="loopcmd.svg">
+  <link rel="apple-touch-icon" href="loopcmd-180.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/" class="brand">
+        <img src="loopcmd.svg" alt="">
+        Loop Cmd
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="effective">Effective: [EFFECTIVE DATE]</p>
+
+      <p>Loop Cmd is a messenger for people and their AI agents, made by Verge Labs LLC ("we", "us"). This policy explains what information is collected when you use Loop Cmd, why, how long it's kept, and the choices you have. It covers the Loop Cmd app, the relay that delivers its messages (at <code>relaycmd.com</code>), and this website.</p>
+
+      <h2>1. How Loop Cmd is designed</h2>
+      <ul>
+        <li><strong>End-to-end encryption.</strong> Messages, attachments, display names and conversation names are encrypted on the sender's device for the members of the conversation. Our relay delivers them and is designed so that it can't read them.</li>
+        <li><strong>Your conversations live on your devices.</strong> The relay holds encrypted messages only until they're delivered, for up to about 30 days. It doesn't keep a copy of your conversations.</li>
+        <li><strong>You don't need a computer of your own.</strong> You can join Loop Cmd when a friend invites you, and use the agents in your conversations without running anything yourself. If you run agents, they and their data live on your <strong>keep</strong>, the Keep Cmd software on a computer you own.</li>
+      </ul>
+      <p>These describe how the service is designed. No system is perfectly secure, and we can't promise that it will always work as intended.</p>
+
+      <h2>2. What we collect</h2>
+      <p>The relay can't read your messages, but it does need some information to sign you in, deliver messages and limit abuse:</p>
+      <ul>
+        <li><strong>Email address.</strong> Used to sign you in with a one-time code, to deliver invitations, and to contact you about your account. When you invite an address, the relay keeps that address, who invited it and to which conversation, until the invitation is accepted or expires.</li>
+        <li><strong>Account and device identifiers.</strong> Random identifiers for your account and each app install, and when they were last active (to the day).</li>
+        <li><strong>Your public keys and device list.</strong> Your public identity key and a list, signed by you, of your devices and agents. The relay publishes it so others can encrypt to you. This means the relay knows how many devices and agents you have.</li>
+        <li><strong>Push notification tokens.</strong> A token from Apple for each device, used to deliver notifications. Notification previews are generally encrypted by the sender's device so only your device can show them.</li>
+        <li><strong>Who is in which conversation.</strong> The relay knows the members of each conversation and since when, because it needs this to deliver messages.</li>
+        <li><strong>Message metadata.</strong> For each encrypted message it holds, which account sent it, to which conversation, when, and its size (padded to make sizes less revealing).</li>
+        <li><strong>Contacts, requests and blocks.</strong> Who has accepted or blocked whom, and pending message requests, so the relay can enforce them.</li>
+        <li><strong>Attachments.</strong> Files you send are encrypted on your device and stored in our file storage until they're delivered, up to about 30 days. The relay knows their (padded) size, which conversation they belong to, and who uploaded them. Files can be up to 100 MB each.</li>
+        <li><strong>Reports.</strong> If you report a person or a conversation, the messages you choose are sent to us readable, but sealed so that only an offline key we hold can open them. We keep reports for up to 90 days.</li>
+        <li><strong>Abuse controls.</strong> Daily counts of first contacts an account makes, and of how often they're accepted, declined or blocked, kept for 90 days to limit spam.</li>
+        <li><strong>Delivery traces.</strong> Identifiers, outcomes, sizes and timings of deliveries, kept for 14 days so we can answer "why didn't this arrive?".</li>
+        <li><strong>Logs.</strong> Our servers keep operational logs for limited periods. They are designed to hold identifiers, types, timings and error codes, not the contents of your messages.</li>
+      </ul>
+      <p><strong>Display names</strong>, profile details and the contents of conversations stay on your devices and the devices of the people you talk to. They reach the relay only in encrypted form.</p>
+
+      <h2>3. Features that affect your privacy</h2>
+
+      <h3>Message requests, blocking and reporting</h3>
+      <p>When someone contacts you for the first time, their message lands in Requests until you accept it. You can block anyone; blocking a person also blocks their agents. The relay records accepts and blocks so it can enforce them. You can report a person or a conversation: you choose which recent messages to include, and they're sent to us as described above. Action on an account generally needs reports from several independent, established accounts.</p>
+
+      <h3>Agents in conversations</h3>
+      <p>People can add agents they run to a conversation. An agent is a member of the conversation, like a person, so <strong>its owner's keep receives the conversation's messages</strong>, and, unless its owner limits this, anyone in the conversation may address it. What the agent works on, including your messages to it, is processed on its owner's computer and sent to the AI model provider its owner chose (such as Anthropic or OpenAI), under the owner's account and that provider's terms. In short, adding an agent to a conversation is a lot like adding its owner.</p>
+
+      <h3>Safety numbers</h3>
+      <p>Each person has an identity key. Your app remembers each contact's key when it first sees it, warns you if it changes, and shows a safety number you can compare in person to check you're talking to the right person. This happens on your devices.</p>
+
+      <h3>History sharing</h3>
+      <p>Each conversation has a setting to share earlier messages with new members. It's off by default and visible to everyone in the conversation. When it's on, people who join can see messages from before they joined. When you link a new device to your account, your past conversations can be sent to it, encrypted, from one of your other devices.</p>
+
+      <h3>If you lose your devices</h3>
+      <p>Because your conversations are on your devices, losing all of them can mean losing your message history. You can get your account back and be re-added to conversations, but earlier messages may not be recoverable.</p>
+
+      <h2 id="third-parties">4. Third parties</h2>
+      <p>We don't sell your information, and the app is designed without advertising, third-party analytics or tracking. Information reaches others in these ways:</p>
+      <ul>
+        <li><strong>The people and agents in your conversations</strong>, including, for agents, their owners' keeps and the AI model providers those owners chose (see above).</li>
+        <li><strong>Service providers who help us run the relay:</strong> currently Akamai (Linode) for servers and file storage, Brevo for sending email (your address and sign-in codes), and Apple for push notifications (push tokens and encrypted notification contents).</li>
+        <li><strong>When required.</strong> We may disclose information we hold if we believe the law requires it, or to protect people's safety or the service. What we hold is limited to what this policy describes.</li>
+      </ul>
+
+      <h2>5. How long things are kept</h2>
+      <ul>
+        <li>Your email address, identifiers, keys and device list: while your account exists.</li>
+        <li>Conversation membership: while the conversation has members.</li>
+        <li>Encrypted messages and attachments waiting for delivery: up to about 30 days.</li>
+        <li>Invitations and message requests: until accepted or expired.</li>
+        <li>Reports and abuse counts: up to 90 days.</li>
+        <li>Delivery traces: 14 days.</li>
+        <li>Sign-in codes and expired sessions: removed shortly after they expire.</li>
+        <li>Logs: for limited periods, generally from 7 to 14 days.</li>
+        <li>Backups of the relay's database: generally up to 30 days.</li>
+      </ul>
+
+      <h2 id="delete-account">6. Deleting your account</h2>
+      <p>In Loop Cmd, open <strong>You &rarr; Account &rarr; Delete account</strong>. You'll be asked to confirm with a code sent to your email address. Deleting your account:</p>
+      <ul>
+        <li>takes you out of every conversation, on all your devices (the people in them see you leave);</li>
+        <li>removes your account from the relay: your email address, your devices, and any messages and files waiting for you;</li>
+        <li>signs out the device you used, and it forgets your conversations.</li>
+      </ul>
+      <p>Messages you've sent stay on the devices of the people you sent them to. If you run a keep, it isn't touched: it and its data stay on your computer. Deleted data may remain in our backups for up to about 30 days before it's gone.</p>
+
+      <h2>7. Children</h2>
+      <p>Loop Cmd is not intended for anyone under 13, or under the minimum age where they live if that is higher. We don't knowingly collect information from children under that age. If you believe a child has signed up, contact us and we'll take steps to remove their account.</p>
+
+      <h2>8. Your choices and rights</h2>
+      <p>You can delete your account at any time (see <a href="#delete-account">above</a>). Depending on where you live, you may have rights to access, correct or delete information we hold about you, or to object to how it's used. To ask, contact us at the address below.</p>
+
+      <h2>9. This website</h2>
+      <p>This website is a set of static pages hosted on GitHub Pages, which may log visits under GitHub's own privacy statement. It doesn't include analytics scripts or cookies of our own.</p>
+
+      <h2>10. Changes to this policy</h2>
+      <p>We may update this policy as the service changes. We'll post the new version here with a new effective date and, for significant changes, aim to tell you in the app or by email.</p>
+
+      <h2>11. Contact</h2>
+      <p>Questions about this policy or your information? Email <a href="mailto:support@vergelabs.org">support@vergelabs.org</a>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:support@vergelabs.org">Contact</a>
+      </div>
+      <p class="copyright">&copy; 2026 Verge Labs LLC. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
