@@ -34,7 +34,7 @@
 
       <h2>1. How Loop Cmd is designed</h2>
       <ul>
-        <li><strong>End-to-end encryption.</strong> Messages, attachments, display names and conversation names are encrypted on the sender's device for the members of the conversation. Our relay delivers them and is designed so that it can't read them.</li>
+        <li><strong>End-to-end encryption.</strong> Messages, attachments, display names and conversation names are encrypted on the sender's device for the members of the conversation. Our relay delivers them and is designed so that it can't read them. By default there is one way we could give a device access to your account; see <a href="#adding-a-device">Adding a device</a>.</li>
         <li><strong>Your conversations live on your devices.</strong> The relay holds encrypted messages only until they're delivered, for up to about 30 days. It doesn't keep a copy of your conversations.</li>
         <li><strong>You don't need a computer of your own.</strong> You can join Loop Cmd when a friend invites you, and use the agents in your conversations without running anything yourself. If you run agents, they and their data live on your <strong>keep</strong>, the Keep Cmd software on a computer you own.</li>
       </ul>
@@ -47,6 +47,7 @@
         <li><strong>Account and device identifiers.</strong> Random identifiers for your account and each app install, and the day they were last active.</li>
         <li><strong>Device checks.</strong> The app uses Apple's App Attest and DeviceCheck so the relay can check it's talking to a genuine install of Loop Cmd, typically when you sign in, add someone new or link a device (not on each message). DeviceCheck may also be used to keep a ban in place if the app is reinstalled on the same phone.</li>
         <li><strong>Your public keys and device list.</strong> Your public identity key and a list, signed by you, of your devices and agents. The relay publishes it so others can encrypt to you. This means the relay knows how many devices and agents you have.</li>
+        <li><strong>A copy of your identity key</strong>, unless you've turned on Require approval from another device: kept encrypted, so that signing in with your email can add a device to your account (see <a href="#adding-a-device">Adding a device</a>).</li>
         <li><strong>Push notification tokens.</strong> A token from Apple for each device, used to deliver notifications. Notification previews are generally encrypted by the sender's device so only your device can show them.</li>
         <li><strong>Who is in which conversation.</strong> The relay knows the members of each conversation and since when, because it needs this to deliver messages.</li>
         <li><strong>Message metadata.</strong> For each encrypted message it holds, which account sent it, to which conversation, when, and its size. Sizes are padded so they reveal less, but timing isn't hidden.</li>
@@ -73,8 +74,12 @@
       <h3>History sharing</h3>
       <p>Each conversation has a setting to share earlier messages with new members. It's off by default and visible to everyone in the conversation. When it's on, people who join can see messages from before they joined. When you link a new device to your account, your past conversations can come with it.</p>
 
+      <h3 id="adding-a-device">Adding a device</h3>
+      <p>By default, signing in with your email can add a device to your account. To make that work, our relay keeps a copy of your identity key, encrypted with a key we hold separately from our database, and gives it to a device you sign in. That device can then receive your new messages, and your other devices may share earlier messages with it where a conversation's history sharing is on. This means we, or someone who gets into your email, could add a device to your account. Your other devices tell you whenever a device is added, and you can remove it.</p>
+      <p>If you'd rather not allow this, turn on <strong>Require approval from another device</strong> (You &rarr; Devices). We then delete our copy and keep none, and a new device needs one of your existing devices to approve it. If you lose all your devices with this on, you can start over with your email, but your earlier messages won't come back, and the people you talk with will see your safety number change.</p>
+
       <h3>If you lose your devices</h3>
-      <p>Because your conversations are on your devices, losing all of them can mean losing your message history. You can get your account back and be re-added to conversations, but earlier messages may not be recoverable.</p>
+      <p>Because your conversations are on your devices, losing all of them can mean losing your message history. You can sign in again and be re-added to conversations, but earlier messages may not be recoverable.</p>
 
       <h2 id="third-parties">4. Third parties</h2>
       <p>We don't sell your information, and the app is designed without advertising, third-party analytics or tracking. Information reaches others in these ways:</p>
@@ -87,6 +92,7 @@
       <h2>5. How long things are kept</h2>
       <ul>
         <li>Your email address, identifiers, keys and device list: while your account exists.</li>
+        <li>The copy of your identity key: until you turn on Require approval from another device, start over with a new key, or delete your account.</li>
         <li>Conversation membership: while the conversation has members.</li>
         <li>Encrypted messages and attachments waiting for delivery: up to about 30 days.</li>
         <li>Invitations: until answered or expired. Message requests: until answered, or up to about 30 days.</li>
