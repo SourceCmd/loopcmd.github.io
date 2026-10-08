@@ -51,9 +51,10 @@
         <li><strong>Who is in which conversation.</strong> The relay knows the members of each conversation and since when, because it needs this to deliver messages.</li>
         <li><strong>Message metadata.</strong> For each encrypted message it holds, which account sent it, to which conversation, when, and its size. Sizes are padded so they reveal less, but timing isn't hidden.</li>
         <li><strong>Contacts, requests and blocks.</strong> Who has accepted or blocked whom, and pending message requests, so the relay can enforce them.</li>
-        <li><strong>Attachments.</strong> Files you send are encrypted on your device and stored in our file storage until they're delivered, up to about 30 days. The relay knows their size (padded to a less revealing size), which conversation they belong to, and who uploaded them. Files can be up to 100 MB each.</li>
+        <li><strong>Attachments.</strong> Files you send are encrypted on your device and stored in our file storage for up to about 30 days, whether or not they've been delivered, so the people in the conversation can fetch them. The relay knows their size (padded to a less revealing size), which conversation they belong to, and who uploaded them. Files can be up to 100 MB each.</li>
         <li><strong>Reports.</strong> If you report a person or a conversation, recent messages you review (typically the last ten or so) are sent to us readable, but sealed so that only an offline key we hold can open them. The relay also records who reported whom. We keep reports for up to about 90 days.</li>
         <li><strong>Abuse controls.</strong> To limit spam, the relay keeps daily counts for each account of first contacts made, and how many were accepted, declined or blocked, for up to about 90 days. Every new account starts with a small daily limit on new contacts, which typically rises as established accounts accept it. Chatting with people who've accepted you isn't limited this way.</li>
+        <li><strong>If you run a keep.</strong> The relay records your keep (an identifier, its public key, when it was last seen, and an optional health report with no content), the email addresses you've invited to it and the accounts that are its members, and encrypted messages waiting for your keep while it's offline, for up to about 7 days.</li>
         <li><strong>Delivery traces.</strong> Identifiers, outcomes, sizes and timings of deliveries, kept for 14 days so we can answer "why didn't this arrive?".</li>
         <li><strong>Logs.</strong> Our servers keep operational logs for a limited period. They are designed to hold identifiers, types, timings and error codes, not the contents of your messages, and our web server's logs are designed to leave out IP addresses.</li>
       </ul>
@@ -84,6 +85,7 @@
       <ul>
         <li><strong>The people and agents in your conversations</strong>, including, for agents, their owners' keeps and the AI model providers those owners chose (see above).</li>
         <li><strong>Service providers who help us run the relay:</strong> currently Akamai (Linode) for servers and file storage, Brevo for sending email (your address and sign-in codes), and Apple for push notifications (push tokens and encrypted notification contents) and for device checks (App Attest and DeviceCheck).</li>
+        <li><strong>Voice input.</strong> If you dictate, speech is turned into text on your device. The first time, the app downloads its speech model from Hugging Face, which sees your device's IP address as with any download; no audio or text is sent.</li>
         <li><strong>When required.</strong> We may disclose information we hold if we believe the law requires it, or to protect people's safety or the service. What we hold is limited to what this policy describes.</li>
       </ul>
 
@@ -91,7 +93,7 @@
       <ul>
         <li>Your email address, identifiers, keys and device list: while your account exists.</li>
         <li>Conversation membership: while the conversation has members.</li>
-        <li>Encrypted messages and attachments waiting for delivery: up to about 30 days.</li>
+        <li>Encrypted messages waiting for delivery: until delivered, up to about 30 days. Attachments: up to about 30 days. Messages waiting for an offline keep: up to about 7 days.</li>
         <li>Invitations: until answered or expired. Message requests: until answered, or up to about 30 days.</li>
         <li>Sign-in codes: typically removed a day after they expire. Sign-in sessions: removed when they expire.</li>
         <li>Reports and abuse counts: up to about 90 days.</li>
