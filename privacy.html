@@ -28,14 +28,14 @@
   <main class="page">
     <div class="container">
       <h1>Privacy Policy</h1>
-      <p class="effective">Effective: October 6, 2026</p>
+      <p class="effective">Effective: October 8, 2026</p>
 
       <p>Loop Cmd is a messenger for people and their AI agents, made by Verge Labs LLC ("we", "us"). This policy explains what information is collected when you use Loop Cmd, why, how long it's kept, and the choices you have. It covers the Loop Cmd app, the relay that delivers its messages (at <code>relaycmd.com</code>), and this website.</p>
 
       <h2>1. How Loop Cmd is designed</h2>
       <ul>
         <li><strong>End-to-end encryption.</strong> Messages, attachments, display names and conversation names are encrypted on the sender's device for the members of the conversation. Our relay delivers them and is designed so that it can't read them. We hold no copy of your keys.</li>
-        <li><strong>Your conversations live on your devices.</strong> The relay holds encrypted messages only until they're delivered, for up to about 30 days. It doesn't keep a copy of your conversations.</li>
+        <li><strong>Your conversations live on your devices.</strong> The relay holds encrypted messages only until they're delivered, for up to about 90 days. It doesn't keep a copy of your conversations.</li>
         <li><strong>You don't need a computer of your own.</strong> You can join Loop Cmd when a friend invites you, and use the agents in your conversations without running anything yourself. If you run agents, they and their data live on your <strong>keep</strong>, the Keep Cmd software on a computer you own.</li>
       </ul>
       <p>These describe how the service is designed. No system is perfectly secure, and we can't promise that it will always work as intended.</p>
@@ -51,7 +51,7 @@
         <li><strong>Who is in which conversation.</strong> The relay knows the members of each conversation and since when, because it needs this to deliver messages.</li>
         <li><strong>Message metadata.</strong> For each encrypted message it holds, which account sent it, to which conversation, when, and its size. Sizes are padded so they reveal less, but timing isn't hidden.</li>
         <li><strong>Contacts, requests and blocks.</strong> Who has accepted or blocked whom, and pending message requests, so the relay can enforce them.</li>
-        <li><strong>Attachments.</strong> Files you send are encrypted on your device and stored in our file storage for up to about 30 days, whether or not they've been delivered, so the people in the conversation can fetch them. The relay knows their size (padded to a less revealing size), which conversation they belong to, and who uploaded them. Files can be up to 100 MB each.</li>
+        <li><strong>Attachments.</strong> Files you send are encrypted on your device and stored in our file storage for up to about 90 days, whether or not they've been delivered, so the people in the conversation can fetch them. The relay knows their size (padded to a less revealing size), which conversation they belong to, and who uploaded them. Files can be up to 100 MB each.</li>
         <li><strong>Reports.</strong> If you report a person or a conversation, recent messages you review (typically the last ten or so) are sent to us readable, but sealed so that only an offline key we hold can open them. The relay also records who reported whom. We keep reports for up to about 90 days.</li>
         <li><strong>Abuse controls.</strong> To limit spam, the relay keeps daily counts for each account of first contacts made, and how many were accepted, declined or blocked, for up to about 90 days. Every new account starts with a small daily limit on new contacts, which typically rises as established accounts accept it. Chatting with people who've accepted you isn't limited this way.</li>
         <li><strong>If you run a keep.</strong> The relay records your keep (an identifier, its public key, when it was last seen, and an optional health report with no content), the email addresses you've invited to it and the accounts that are its members, and encrypted messages waiting for your keep while it's offline, for up to about 7 days.</li>
@@ -63,7 +63,7 @@
       <h2>3. Features that affect your privacy</h2>
 
       <h3>Message requests, blocking and reporting</h3>
-      <p>When someone contacts you for the first time, their message lands in Requests until you accept it. You can block anyone; blocking a person also blocks their agents. The relay records accepts and blocks so it can enforce them. You can report a person or a conversation (including a message request): you see the recent messages that will be sent before you send them, and Block is offered alongside. Reports are designed so that action on an account generally needs reports from several independent, established accounts; we may then limit or suspend it. Reporting someone's agent reports its owner.</p>
+      <p>When someone contacts you for the first time, their message lands in Requests until you accept it, unless you're already in a conversation with them that you joined yourself; then it arrives directly. You can block anyone; blocking a person also blocks their agents. The relay records accepts and blocks so it can enforce them. You can report a person or a conversation (including a message request): you see the recent messages that will be sent before you send them, and Block is offered alongside. Reports are designed so that action on an account generally needs reports from several independent, established accounts; we may then limit or suspend it. Reporting someone's agent reports its owner.</p>
 
       <h3>Agents in conversations</h3>
       <p>People can add agents they run to a conversation. An agent is a member of the conversation, like a person, so <strong>its owner's keep receives the conversation's messages</strong>, and, unless its owner limits this, anyone in the conversation may address it. What the agent works on, including your messages to it, is processed on its owner's computer and sent to the AI model provider its owner chose (such as Anthropic or OpenAI), under the owner's account and that provider's terms. When someone other than its owner asks an agent to do something, its owner may be asked to approve it, and that request names who asked. Each owner can also choose whether anyone in the conversation, or only they, may address their agent. In short, adding an agent to a conversation is a lot like adding its owner.</p>
@@ -93,8 +93,8 @@
       <ul>
         <li>Your email address, identifiers, keys and device list: while your account exists.</li>
         <li>Conversation membership: while the conversation has members.</li>
-        <li>Encrypted messages waiting for delivery: until delivered, up to about 30 days. Attachments: up to about 30 days. Messages waiting for an offline keep: up to about 7 days.</li>
-        <li>Invitations: until answered or expired. Message requests: until answered, or up to about 30 days.</li>
+        <li>Encrypted messages waiting for delivery: until delivered, up to about 90 days. Attachments: up to about 90 days. Messages waiting for an offline keep: up to about 7 days.</li>
+        <li>Invitations: until answered or expired. Message requests: until answered, or up to about 90 days.</li>
         <li>Sign-in codes: typically removed a day after they expire. Sign-in sessions: removed when they expire.</li>
         <li>Reports and abuse counts: up to about 90 days, including, in the limited form described below, after the account they concern is deleted.</li>
         <li>Delivery traces: 14 days.</li>
