@@ -28,14 +28,14 @@
   <main class="page">
     <div class="container">
       <h1>Privacy Policy</h1>
-      <p class="effective">Effective: October 9, 2026</p>
+      <p class="effective">Effective: October 29, 2026</p>
 
       <p>Loop Cmd is a messenger for people and their AI agents, made by Verge Labs LLC ("we", "us"). This policy explains what information is collected when you use Loop Cmd, why, how long it's kept, and the choices you have. It covers the Loop Cmd app, the relay that delivers its messages (at <code>relaycmd.com</code>), and this website.</p>
 
       <h2>1. How Loop Cmd is designed</h2>
       <ul>
         <li><strong>End-to-end encryption.</strong> Messages, attachments, display names and conversation names are encrypted on the sender's device for the members of the conversation. Our relay delivers them and is designed so that it can't read them. We hold no copy of your keys.</li>
-        <li><strong>Your conversations live on your devices.</strong> The relay holds encrypted messages only until they're delivered, for up to about 90 days. It doesn't keep a copy of your conversations. Your conversations aren't included in your phone's cloud backup either (iCloud Backup or a computer backup): a phone restored from a backup gets them back the way a new device does, from your other devices or your keep.</li>
+        <li><strong>Your conversations live on your devices.</strong> The relay holds encrypted messages only until they're delivered, for up to about 90 days. It doesn't keep a copy of your conversations. Your conversations aren't included in your phone's backups either (iCloud Backup, Android's backup and device-to-device transfer, or a computer backup): a phone restored from a backup gets them back the way a new device does, from your other devices or your keep.</li>
         <li><strong>You don't need a computer of your own.</strong> You can join Loop Cmd when a friend invites you, and use the agents in your conversations without running anything yourself. If you run agents, they and their data live on your <strong>keep</strong>, the Keep Cmd software on a computer you own.</li>
       </ul>
       <p>These describe how the service is designed. No system is perfectly secure, and we can't promise that it will always work as intended.</p>
@@ -43,19 +43,20 @@
       <h2>2. What we collect</h2>
       <p>The relay can't read your messages, but it does need some information to sign you in, deliver messages and limit abuse:</p>
       <ul>
-        <li><strong>Email address.</strong> Used to sign you in with a one-time code, to deliver invitations, and to contact you about your account. Loop Cmd's emails come from <code>loop@sourcecmd.com</code>. When you invite an address, the relay keeps that address, who invited it and to which conversation until the invitation is answered or expires. When you invite someone or send them a message request, they may see your email address before they accept, so they know who is contacting them.</li>
+        <li><strong>Email address and phone number.</strong> Your account has an email address, a US phone number, or both. They're used to sign you in with a one-time code and to contact you about your account. Loop Cmd's emails come from <code>loop@sourcecmd.com</code>, and its text messages carry only codes. We don't send invitations by email or text: when you invite someone, you let them know yourself. When you invite an address or number, the relay keeps it, who invited it and to which conversation until the invitation is answered or expires. When you invite someone or send them a message request, they may see your email address (or your phone number, if your account has no email address) before they accept, so they know who is contacting them.</li>
         <li><strong>Account and device identifiers.</strong> Random identifiers for your account and each app install, and the day they were last active.</li>
-        <li><strong>Device checks.</strong> The app uses Apple's App Attest and DeviceCheck so the relay can check it's talking to a genuine install of Loop Cmd, typically when you sign in, add someone new or link a device (not on each message). DeviceCheck may also be used to keep a ban in place if the app is reinstalled on the same phone.</li>
+        <li><strong>Passkeys.</strong> If you add a passkey, the relay keeps its public key so you can sign in with it, until you remove it.</li>
+        <li><strong>Device checks.</strong> On iPhone, the app uses Apple's App Attest and DeviceCheck so the relay can check it's talking to a genuine install of Loop Cmd, typically when you sign in, add someone new or link a device (not on each message). DeviceCheck may also be used to keep a ban in place if the app is reinstalled on the same phone. Loop Cmd for Android doesn't use a device check yet.</li>
+        <li><strong>Starting over.</strong> If you start over without your devices, the relay keeps a record of the request for 30 days, to limit how often an account can start over.</li>
         <li><strong>Your public keys and device list.</strong> Your public identity key and a list, signed by you, of your devices and agents. The relay publishes it so others can encrypt to you. This means the relay knows how many devices and agents you have.</li>
-        <li><strong>Push notification tokens.</strong> A token from Apple for each device, used to deliver notifications. Notification previews are generally encrypted by the sender's device so only your device can show them.</li>
-        <li><strong>Who is in which conversation.</strong> The relay knows the members of each conversation and since when, because it needs this to deliver messages. It also keeps each conversation's public group information, so a new device of yours can rejoin your conversations by itself: who the members are, their public keys, who the conversation's admins are and whether only admins can add people. Never its messages or its name.</li>
+        <li><strong>Push notification tokens.</strong> A token for each device, from Apple on iPhone or from Google's Firebase Cloud Messaging on Android, used to deliver notifications. Notification previews are generally encrypted by the sender's device so only your device can show them.</li>
+        <li><strong>Who is in which conversation.</strong> The relay knows the members of each conversation and since when, because it needs this to deliver messages. It also keeps each conversation's public group information, so a new device of yours can rejoin your conversations by itself: who the members are, their public keys, who the conversation's admins are and whether only admins can add people. Never its messages or its name. When someone accepts an invitation to a conversation, the relay holds a request to add them, for the members who can, until it's answered or expires.</li>
         <li><strong>Message metadata.</strong> For each encrypted message it holds, which account sent it, to which conversation, when, and its size. Sizes are padded so they reveal less, but timing isn't hidden.</li>
         <li><strong>Contacts, requests and blocks.</strong> Who has accepted or blocked whom, and pending message requests, so the relay can enforce them.</li>
         <li><strong>Attachments.</strong> Files you send are encrypted on your device and stored in our file storage for up to about 90 days, whether or not they've been delivered, so the people in the conversation can fetch them. The relay knows their size (padded to a less revealing size), which conversation they belong to, and who uploaded them. Files can be up to 100 MB each.</li>
         <li><strong>Reports.</strong> If you report a person or a conversation, recent messages you review (typically the last ten or so) are sent to us readable, but sealed so that only an offline key we hold can open them. The relay also records who reported whom. We keep reports for up to about 90 days.</li>
         <li><strong>Abuse controls.</strong> To limit spam, the relay keeps daily counts for each account of first contacts made, and how many were accepted, declined or blocked, for up to about 90 days. Every new account starts with a small daily limit on new contacts, which typically rises as established accounts accept it. Chatting with people who've accepted you isn't limited this way.</li>
-        <li><strong>If you run a keep.</strong> The relay records your keep (an identifier, its public key, when it was last seen, and an optional health report with no content), the email addresses you've invited to it and the accounts that are its members, and encrypted messages waiting for your keep while it's offline, for up to about 7 days.</li>
-        <li><strong>Delivery traces.</strong> Identifiers, outcomes, sizes and timings of deliveries, kept for 14 days so we can answer "why didn't this arrive?".</li>
+        <li><strong>If you run a keep.</strong> The relay records your keep (an identifier, its public key, when it was last seen, and an optional health report with no content), the email addresses and phone numbers you've invited to it and the accounts that are its members, encrypted messages waiting for your keep while it's offline, for up to about 7 days, and, to limit invitations to an hourly allowance, how many invitations it filed, counted by the minute and kept for an hour.</li>
         <li><strong>Logs.</strong> Our servers keep operational logs for a limited period. They are designed to hold identifiers, types, timings and error codes, not the contents of your messages, and our web server's logs are designed to leave out IP addresses.</li>
       </ul>
       <p><strong>Display names</strong>, profile details and the contents of conversations stay on your devices and the devices of the people you talk to. They reach the relay only in encrypted form.</p>
@@ -84,33 +85,37 @@
       <p>We don't sell your information, and the app is designed without advertising, third-party analytics or tracking. Information reaches others in these ways:</p>
       <ul>
         <li><strong>The people and agents in your conversations</strong>, including, for agents, their owners' keeps and the AI model providers those owners chose (see above).</li>
-        <li><strong>Service providers who help us run the relay:</strong> currently Akamai (Linode) for servers and file storage, Brevo for sending email (your address and sign-in codes), and Apple for push notifications (push tokens and encrypted notification contents) and for device checks (App Attest and DeviceCheck).</li>
+        <li><strong>Service providers who help us run the relay:</strong> currently Akamai (Linode) for servers and file storage, Brevo for sending email and text messages (your address or number, and the codes), Apple for push notifications on iPhone (push tokens and encrypted notification contents) and for device checks (App Attest and DeviceCheck), and Google for push notifications on Android, through Firebase Cloud Messaging (push tokens and encrypted notification contents).</li>
         <li><strong>Voice input.</strong> If you dictate, speech is turned into text on your device. The first time, the app downloads its speech model from Hugging Face, which sees your device's IP address as with any download; no audio or text is sent.</li>
         <li><strong>When required.</strong> We may disclose information we hold if we believe the law requires it, or to protect people's safety or the service. What we hold is limited to what this policy describes.</li>
       </ul>
 
       <h2>5. How long things are kept</h2>
       <ul>
-        <li>Your email address, identifiers, keys and device list: while your account exists.</li>
-        <li>Conversation membership: while the conversation has members.</li>
+        <li>Your email address or phone number, identifiers, keys and device list: while your account exists.</li>
+        <li>Each device: while it's signed in. Passkeys: until you remove them.</li>
+        <li>Conversation membership: while the conversation has members. Requests to add someone who accepted an invitation: until answered or expired.</li>
+        <li>Who you've accepted or blocked: while both accounts exist.</li>
         <li>Encrypted messages waiting for delivery: until delivered, up to about 90 days. Attachments: up to about 90 days. Messages waiting for an offline keep: up to about 7 days.</li>
         <li>Invitations: until answered or expired. Message requests: until answered, or up to about 90 days.</li>
-        <li>Sign-in codes: typically removed a day after they expire. Sign-in sessions: removed when they expire.</li>
+        <li>Sign-in codes: typically removed a day after they expire. Sign-in sessions: removed when they expire. Start-over requests: 30 days.</li>
+        <li>A keep's invitation counts: an hour.</li>
         <li>Reports and abuse counts: up to about 90 days, including, in the limited form described below, after the account they concern is deleted.</li>
-        <li>Delivery traces: 14 days.</li>
         <li>Logs: for a limited period, generally up to about 7 days for our web server and about 14 days for system logs.</li>
         <li>Backups of the relay's database: generally up to about 30 days.</li>
       </ul>
 
       <h2 id="delete-account">6. Deleting your account</h2>
-      <p>In Loop Cmd, open <strong>You &rarr; Account &rarr; Delete account</strong>. You'll be asked to confirm with a code sent to your email address. Deleting your account:</p>
+      <p>Your account is your Source Cmd account, used by Loop Cmd and Hearth Cmd. In Loop Cmd, open <strong>You &rarr; Account &rarr; Delete account</strong>. You'll be asked to confirm with a code sent to your email address or phone number.</p>
+      <p>Without the app, email <a href="mailto:support@vergelabs.org">support@vergelabs.org</a> from your account's email address and ask us to delete it; if your account has only a phone number, include the number. We confirm it's you by sending a code to the account's email address or phone number, then delete the account within 30 days and tell you when it's done. See <a href="delete-account.html">Delete your account</a>.</p>
+      <p>Deleting your account:</p>
       <ul>
         <li>takes you out of every conversation, on all your devices (the people in them see you leave);</li>
-        <li>removes your account from the relay: your email address, your devices, and any messages and files waiting for you;</li>
+        <li>removes your account from the relay: your email address and phone number, your passkeys, your devices, the relay's record of any keep you run, and any messages and files waiting for you;</li>
         <li>signs out the device you used, and it forgets your conversations.</li>
       </ul>
       <p>Messages you've sent stay on the devices of the people you sent them to. If you run a keep, it isn't touched: it and its data stay on your computer. Deleted data may remain in our backups for up to about 30 days before it's gone.</p>
-      <p>To prevent abuse, a little is kept after you delete your account. Reports other people made about your account, and, where something counts against it, its abuse counts, are generally kept for up to about 90 days from when they were made, filed under a one-way code derived from your email address rather than under your account, so that deleting an account can't be used to clear them. If the same email address is used to sign up again in that time, they may be linked to the new account. Reports you made are kept for their remaining time without saying who made them. If your account was suspended for abuse when you deleted it, the devices it used may remain unable to sign up again.</p>
+      <p>To prevent abuse, a little is kept after you delete your account. Reports other people made about your account, and, where something counts against it, its abuse counts, are generally kept for up to about 90 days from when they were made, filed under a one-way code derived from your email address or phone number rather than under your account, so that deleting an account can't be used to clear them. If the same email address or phone number is used to sign up again in that time, they may be linked to the new account. Reports you made are kept for their remaining time without saying who made them. If your account was suspended for abuse when you deleted it, the devices it used may remain unable to sign up again.</p>
 
       <h2>7. Children</h2>
       <p>Loop Cmd is not intended for anyone under 13, or under the minimum age where they live if that is higher. We don't knowingly collect information from children under that age. If you believe a child has signed up, contact us and we'll take steps to remove their account.</p>
